@@ -1,0 +1,20 @@
+
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+#    - name: Example assertion
+#      ansible.builtin.assert:
+#        that: true
+    - name: Test Go exit code
+      ansible.builtin.shell: "go version"
+      register: result
+      changed_when: false
+      failed_when:
+        - result.rc != 0
+    - name: Read Go vesion
+      ansible.builtin.debug:
+         msg: "{{result.stdout}}"

@@ -1,0 +1,30 @@
+---
+# tasks file for webapp
+
+- name: Update and upgrade apt packages
+  become: true
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400 #One day
+
+- name: Install GPG
+  package:
+          name: gpg
+          state: present
+
+- name: Install dirmngr
+  package:
+          name: dirmngr
+          state: present
+
+- name: Add Golang PPA
+  apt_repository:
+    validate_certs: yes
+    repo: 'ppa:longsleep/golang-backports'
+    state: present
+
+- name: Install Go
+  package:
+          name: golang
+          state: present

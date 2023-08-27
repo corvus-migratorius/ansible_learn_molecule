@@ -1,0 +1,12 @@
+galaxy_info:
+  authro: doumor
+  description: simple test web server with go
+  company: my
+  license: BSD
+  min_ansible_version: 2.9
+  platforms:
+   - name: ubuntu
+     versions:
+     - 22.04
+  galaxy_tags: []
+dependences: []
