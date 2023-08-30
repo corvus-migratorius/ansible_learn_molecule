@@ -1,6 +1,6 @@
 galaxy_info:
   authro: doumor
-  description: simple test web server with go
+  description: simple go build env
   company: my
   license: BSD
   min_ansible_version: 2.9

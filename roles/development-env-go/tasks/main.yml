@@ -1,5 +1,5 @@
 ---
-# tasks file for webapp
+# tasks file for development-env-go
 
 - name: Update and upgrade apt packages
   become: true
